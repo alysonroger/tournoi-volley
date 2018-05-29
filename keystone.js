@@ -9,6 +9,9 @@ const handlebars = require('express-handlebars');
 const config = require('./config.json');
 const Helpers = require('./templates/views/helpers');
 
+console.log('Starts keystone');
+console.log('config:', JSON.stringify(config), config.cloudinaryUrl, config.cookieSecret, config.mongo);
+
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
@@ -57,8 +60,6 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 });
-
-console.log('config:', JSON.stringify(config), config.cloudinaryUrl, config.cookieSecret, config.mongo);
 
 keystone.set('cloudinary config', config.cloudinaryUrl);
 keystone.set('cookie secret', config.cookieSecret);
