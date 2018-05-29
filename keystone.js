@@ -58,6 +58,8 @@ keystone.set('nav', {
 	users: 'users',
 });
 
+console.log('config:', JSON.stringify(config), config.cloudinaryUrl, config.cookieSecret, config.mongo);
+
 keystone.set('cloudinary config', config.cloudinaryUrl);
 keystone.set('cookie secret', config.cookieSecret);
 keystone.set('mongo', config.mongo);
