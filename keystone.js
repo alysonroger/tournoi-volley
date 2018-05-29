@@ -10,7 +10,6 @@ const config = require('./config.json');
 const Helpers = require('./templates/views/helpers');
 
 console.log('Starts keystone');
-console.log('config:', JSON.stringify(config), config.cloudinaryUrl, config.cookieSecret, config.mongo);
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -37,6 +36,10 @@ keystone.init({
 	'user model': 'User',
 });
 
+keystone.set('cloudinary config', config.cloudinaryUrl);
+keystone.set('cookie secret', config.cookieSecret);
+keystone.set('mongo', config.mongo);
+
 // Load your project's Models
 keystone.import('models');
 
@@ -60,10 +63,6 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 });
-
-keystone.set('cloudinary config', config.cloudinaryUrl);
-keystone.set('cookie secret', config.cookieSecret);
-keystone.set('mongo', config.mongo);
 
 // Start Keystone to connect to your database and initialise the web server
 
