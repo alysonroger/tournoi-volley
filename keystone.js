@@ -6,6 +6,7 @@ require('dotenv').config();
 const keystone = require('keystone');
 const handlebars = require('express-handlebars');
 
+const config = require('./config.json');
 const Helpers = require('./templates/views/helpers');
 
 // Initialise Keystone with your project's configuration.
@@ -56,6 +57,10 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 });
+
+keystone.set('cloudinary config', config.cloudinaryUrl);
+keystone.set('cookie secret', config.cookieSecret);
+keystone.set('mongo', config.mongo);
 
 // Start Keystone to connect to your database and initialise the web server
 
