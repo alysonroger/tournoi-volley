@@ -1,12 +1,15 @@
 {
-	"extends": "keystone",
-	"rules": {
-		"space-before-function-paren": [
-			"error", {
-				"anonymous": "always",
-				"named": "never",
-				"asyncArrow": "always"
-			}
-		]
-	}
+  "extends": "eslint:recommended",
+  "env": {
+    "amd": true,
+    "es6": true
+  },
+  "globals": {
+    "__dirname": true,
+    "console": true,
+    "module": true
+  },
+  "rules": {
+    "no-console": "off"
+  }
 }

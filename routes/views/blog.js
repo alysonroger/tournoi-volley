@@ -1,7 +1,7 @@
 const keystone = require('keystone');
 const async = require('async');
 
-exports = module.exports = (req, res) => {
+module.exports = (req, res) => {
 	const view = new keystone.View(req, res);
 	const locals = res.locals;
 

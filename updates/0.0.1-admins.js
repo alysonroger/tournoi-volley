@@ -7,7 +7,7 @@
  * module.exports = function(done) { ... }
  */
 
-exports.create = {
+module.exports.create = {
 	User: [
 		{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'josselin.buils@gmail.com', 'password': 'toto', 'isAdmin': true },
 	],
