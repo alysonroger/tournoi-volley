@@ -1,4 +1,3 @@
-const express = require('express');
 const keystone = require('keystone');
 const middleware = require('./middleware');
 const importRoutes = keystone.importer(__dirname);
@@ -14,16 +13,12 @@ const routes = {
 
 // Setup Route Bindings
 module.exports = app => {
-  const router = express.Router();
-
   // Views
-  router.get('/', routes.views.index);
-  router.get('/blog/:category?', routes.views.blog);
-  router.get('/blog/post/:post', routes.views.post);
-  router.get('/gallery', routes.views.gallery);
-  router.all('/contact', routes.views.contact);
-
-  app.use('/tournoi-volley', router);
+  app.get('/', routes.views.index);
+  app.get('/blog/:category?', routes.views.blog);
+  app.get('/blog/post/:post', routes.views.post);
+  app.get('/gallery', routes.views.gallery);
+  app.all('/contact', routes.views.contact);
 
   // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
   // app.get('/protected', middleware.requireUser, routes.views.protected);
