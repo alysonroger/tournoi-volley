@@ -31,9 +31,11 @@ const routes = {
 };
 
 // Setup Route Bindings
-module.exports = function (app) {
+module.exports = app => {
+  app.use('/tournoi-volley', app);
+
 	// Views
-	app.get('/tournoi-volley', routes.views.index);
+	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
