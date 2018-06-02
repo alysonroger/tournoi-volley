@@ -1,3 +1,5 @@
+@import "mixins";
+
 p {
   text-align: justify;
   font-size: 1.1rem;
@@ -17,8 +19,18 @@ p {
     @include body-font;
   }
 
+  p {
+    margin-bottom: 6rem;
+  }
+
   .logo {
     height: 485px;
+  }
+}
+
+@media (max-width: 440px) {
+  .masthead .logo {
+    height: 420px;
   }
 }
 

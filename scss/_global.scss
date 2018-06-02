@@ -1,4 +1,11 @@
+@import "mixins";
 @import "variables";
+
+@media (max-width: 440px) {
+  .navbar-brand {
+    font-size: .9rem;
+  }
+}
 
 body {
   @include body-font;

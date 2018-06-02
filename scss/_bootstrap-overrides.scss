@@ -1,3 +1,5 @@
+@import "variables";
+
 // Bootstrap overrides for this template
 a {
   color: $primary;
@@ -5,6 +7,10 @@ a {
   &:focus, &:hover, &:active {
     color: darken($primary, 10%);
   }
+}
+
+a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
+  background-color: $primary !important;
 }
 
 .btn {
