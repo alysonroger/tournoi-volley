@@ -2,7 +2,7 @@
 // customising the .env file in your project's root folder.
 require('dotenv').config();
 
-// Require keystone
+const cloudinary = require('cloudinary');
 const keystone = require('keystone');
 const handlebars = require('express-handlebars');
 
@@ -16,9 +16,8 @@ console.log('Starts keystone');
 // and documentation.
 
 keystone.init({
-  'name': 'Tournoi de Volley GE',
-  'brand': 'Tournoi de Volley GE',
-  'sass': 'public',
+  'name': 'Tournoi de Volley GEMS',
+  'brand': 'Tournoi de Volley GEMS',
   'static': 'public',
   'favicon': 'public/favicon.ico',
   'views': 'templates/views',
@@ -36,7 +35,9 @@ keystone.init({
   'user model': 'User',
 });
 
-keystone.set('cloudinary config', config.cloudinaryUrl);
+keystone.set('cloudinary config', config.cloudinary);
+cloudinary.config(config.cloudinary);
+
 keystone.set('cookie secret', config.cookieSecret);
 keystone.set('mongo', config.mongo);
 

@@ -1,0 +1,52 @@
+p {
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+.masthead {
+  padding-top: calc(6rem + 72px);
+
+  h1 {
+    font-size: 2.75em;
+    line-height: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    @include body-font;
+  }
+
+  .logo {
+    height: 485px;
+  }
+}
+
+@media (max-width: 767px) {
+  .masthead {
+    h1 {
+      font-size: 2em;
+      margin: 3rem auto;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  p {
+    font-size: 1.3rem;
+  }
+
+  .masthead {
+    padding-top: calc(6rem + 106px);
+
+    h1 {
+      font-size: 3.75em;
+      line-height: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1.75em;
+    }
+  }
+}
+
