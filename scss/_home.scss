@@ -28,17 +28,18 @@ p {
   }
 }
 
-@media (max-width: 440px) {
-  .masthead .logo {
-    height: 420px;
-  }
-}
-
 @media (max-width: 767px) {
   .masthead {
     h1 {
       font-size: 2em;
       margin: 3rem auto;
+    }
+
+    .logo {
+      height: 140px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
