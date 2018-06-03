@@ -1,65 +1,80 @@
 @import "mixins";
 
-p {
-  text-align: justify;
-  font-size: 1.1rem;
-}
-
-.masthead {
-  padding-top: calc(6rem + 72px);
-
-  h1 {
-    font-size: 2.75em;
-    line-height: 2.5rem;
-    margin-bottom: 3rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-    @include body-font;
-  }
-
+#home {
   p {
-    margin-bottom: 6rem;
-  }
-
-  .logo {
-    height: 485px;
-  }
-}
-
-@media (max-width: 767px) {
-  .masthead {
-    h1 {
-      font-size: 2em;
-      margin: 3rem auto;
-    }
-
-    .logo {
-      height: 140px;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  p {
-    font-size: 1.3rem;
+    text-align: justify;
+    font-size: 1.1rem;
   }
 
   .masthead {
-    padding-top: calc(6rem + 106px);
+    padding-top: calc(6rem + 72px);
 
     h1 {
-      font-size: 3.75em;
-      line-height: 3.5rem;
+      font-size: 2.75em;
+      line-height: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     h2 {
-      font-size: 1.75em;
+      font-size: 1.3rem;
+      @include body-font;
+    }
+
+    img {
+      margin-left: 0 !important;
+    }
+
+    .logo {
+      height: 430px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    section {
+      padding: 3rem 0;
+    }
+
+    .masthead {
+      padding-top: 72px;
+
+      h1 {
+        font-size: 2em;
+        margin: 3rem auto;
+      }
+
+      p {
+        margin-bottom: 3rem;
+      }
+
+      .logo {
+        height: 140px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    p {
+      font-size: 1.3rem;
+    }
+
+    .masthead {
+      padding-top: calc(6rem + 106px);
+
+      h1 {
+        font-size: 3.75em;
+        line-height: 3.5rem;
+      }
+
+      h2 {
+        font-size: 1.75em;
+      }
+
+      .logo {
+        height: 485px;
+      }
     }
   }
 }
-

@@ -1,8 +1,7 @@
 @import "variables";
 
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding: 5rem 0;
   background-color: $secondary;
   color: $white;
 
@@ -10,5 +9,11 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 3rem 0;
   }
 }
