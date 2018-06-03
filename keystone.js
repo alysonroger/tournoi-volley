@@ -11,17 +11,13 @@ const Helpers = require('./templates/views/helpers');
 
 console.log('Starts keystone');
 
-// Initialise Keystone with your project's configuration.
-// See http://keystonejs.com/guide/config for available options
-// and documentation.
-
 keystone.init({
-  'name': 'Tournoi de Volley GEMS',
+  'admin path': 'admin',
+  'auth': true,
+  'auto update': true,
   'brand': 'Tournoi de Volley GEMS',
-  'static': 'public',
-  'favicon': 'public/favicon.ico',
-  'views': 'templates/views',
-  'view engine': '.hbs',
+  'cloudinary config': config.cloudinary,
+  'cookie secret': config.cookieSecret,
   'custom engine': handlebars.create({
     layoutsDir: 'templates/views/layouts',
     partialsDir: 'templates/views/partials',
@@ -29,42 +25,33 @@ keystone.init({
     helpers: new Helpers(),
     extname: '.hbs',
   }).engine,
-  'auto update': true,
+  'favicon': 'public/favicon.ico',
+  'locals': {
+    _: require('lodash'),
+    env: keystone.get('env'),
+    utils: keystone.utils,
+    editable: keystone.content.editable,
+  },
+  'mongo': config.mongo,
+  'name': 'Tournoi de Volley GEMS',
+  'routes': require('./routes'),
   'session': true,
-  'auth': true,
+  'static': 'public',
   'user model': 'User',
+  'view engine': '.hbs',
+  'views': 'templates/views',
 });
 
-keystone.set('cloudinary config', config.cloudinary);
 cloudinary.config(config.cloudinary);
-
-keystone.set('cookie secret', config.cookieSecret);
-keystone.set('mongo', config.mongo);
 
 // Load your project's Models
 keystone.import('models');
 
-// Setup common locals for your templates. The following are required for the
-// bundled templates and layouts. Any runtime locals (that should be set uniquely
-// for each request) should be added to ./routes/middleware.js
-keystone.set('locals', {
-  _: require('lodash'),
-  env: keystone.get('env'),
-  utils: keystone.utils,
-  editable: keystone.content.editable,
-});
-
-// Load your project's Routes
-keystone.set('routes', require('./routes'));
-
-// Configure the navigation bar in Keystone's Admin UI
+// Need to be done after models import
 keystone.set('nav', {
-  posts: ['posts', 'post-categories'],
   galleries: 'galleries',
-  enquiries: 'enquiries',
   users: 'users',
 });
 
 // Start Keystone to connect to your database and initialise the web server
-
 keystone.start();
