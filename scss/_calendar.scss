@@ -1,0 +1,7 @@
+@import "mixins";
+
+#calendar {
+  .container {
+    padding-top: calc(6rem + 72px);
+  }
+}

@@ -1,0 +1,12 @@
+<div id="calendar">
+  <div class="container">
+    <h1>Calendrier</h1>
+    {{#if matches}}
+      {{#each matches}}
+        {{team1.name}} vs {{team2.name}}
+      {{/each}}
+    {{else}}
+      <h3 class="text-muted">There is no match yet.</h3>
+    {{/if}}
+  </div>
+</div>

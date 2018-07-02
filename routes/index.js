@@ -15,6 +15,7 @@ const routes = {
 module.exports = app => {
   // Views
   app.get('/', routes.views.home);
+  app.get('/calendar', routes.views.calendar);
   app.get('/gallery', routes.views.gallery);
 
   // app.get('/blog/:category?', routes.views.blog);
