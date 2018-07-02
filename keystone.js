@@ -49,7 +49,8 @@ keystone.import('models');
 
 // Need to be done after models import
 keystone.set('nav', {
-  galleries: 'galleries',
+  teams: 'teams',
+  matches: 'matches',
   users: 'users',
 });
 
