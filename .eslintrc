@@ -11,6 +11,9 @@
     "console": true,
     "module": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
   "rules": {
     "no-console": "off"
   }

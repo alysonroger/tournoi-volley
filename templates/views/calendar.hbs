@@ -1,12 +1,40 @@
+<!--suppress NsUnresolvedStyleClassReference -->
 <div id="calendar">
   <div class="container">
-    <h1>Calendrier</h1>
-    {{#if matches}}
-      {{#each matches}}
-        {{team1.name}} vs {{team2.name}}
-      {{/each}}
-    {{else}}
-      <h3 class="text-muted">There is no match yet.</h3>
-    {{/if}}
+    <div class="row">
+      <h1>Calendrier</h1>
+    </div>
+    <div class="row">
+      {{#if dates}}
+        {{#each dates}}
+          <div class="col-sm-3">
+            <h5 class="date">{{date}}</h5>
+          </div>
+          <div class="col-sm">
+            <div class="row">
+              {{#each slots}}
+                <div class="col-sm">
+                  <h5 class="time">{{time}}</h5>
+                  {{#each matches}}
+                    <div class="row bg-primary text-white match">
+                      <div class="col-4">
+                        <span class="court">Terrain {{court}}</span>
+                      </div>
+                      <div class="col">
+                        <div><strong>{{team1.name}}</strong></div>
+                        <div>vs</div>
+                        <div><strong>{{team2.name}}</strong></div>
+                      </div>
+                    </div>
+                  {{/each}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        {{/each}}
+      {{else}}
+        <h3 class="text-muted">There is no match yet.</h3>
+      {{/if}}
+    </div>
   </div>
 </div>

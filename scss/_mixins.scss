@@ -6,3 +6,10 @@
   font-weight: 700;
   font-family: 'Montserrat';
 }
+
+@mixin vertical-centered() {
+  display: block;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
