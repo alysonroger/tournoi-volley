@@ -7,7 +7,7 @@ const Team = new keystone.List('Team', {
 
 Team.add({
   name: { type: String, required: true },
-  pool: { type: Types.Select, options: '1, 2, 3, 4, 5, 6, 7, 8', required: true, initial: true },
+  pool: { type: Types.Select, options: '1, 2, 3, 4, 5, 6, 7, 8', initial: true },
 });
 
 Team.register();
