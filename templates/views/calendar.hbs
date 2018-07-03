@@ -17,13 +17,16 @@
                   <h5 class="time">{{time}}</h5>
                   {{#each matches}}
                     <div class="row bg-primary text-white match">
-                      <div class="col-4">
-                        <span class="court">Terrain {{court}}</span>
-                      </div>
                       <div class="col">
                         <div><strong>{{team1.name}}</strong></div>
                         <div>vs</div>
                         <div><strong>{{team2.name}}</strong></div>
+                      </div>
+                      <div class="col-4">
+                        <div class="court">
+                          <p>Terrain {{court}}</p>
+                          <p>{{referee.name}}</p>
+                        </div>
                       </div>
                     </div>
                   {{/each}}

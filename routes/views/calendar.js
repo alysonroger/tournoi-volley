@@ -14,7 +14,7 @@ module.exports = (req, res) => {
       .list('Match')
       .model
       .find()
-      .populate('team1 team2')
+      .populate('referee team1 team2')
       .exec((error, matches) => {
         res.locals.dates = _.map(
           _.groupBy(matches, match => match.date),
