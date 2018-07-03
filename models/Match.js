@@ -30,4 +30,5 @@ Match.add({
   },
 });
 
+Match.defaultColumns = 'date, time, team1, team2, referee, type';
 Match.register();
