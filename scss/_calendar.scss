@@ -5,23 +5,27 @@
     padding-top: calc(6rem + 72px);
   }
 
-  .date {
-    @include vertical-centered;
-  }
+  .day {
+    margin-top: 20px;
 
-  .match {
-    border: 1px solid black;
-    border-radius: 5px;
-    text-align: center;
-    margin: 30px 0;
-    padding: 20px 0;
-
-    .court {
+    .date {
       @include vertical-centered;
     }
-  }
 
-  .time {
-    text-align: center;
+    .match {
+      border: 1px solid black;
+      border-radius: 5px;
+      text-align: center;
+      margin: 30px 0;
+      padding: 20px 0;
+
+      .court {
+        @include vertical-centered;
+      }
+    }
+
+    .time {
+      text-align: center;
+    }
   }
 }

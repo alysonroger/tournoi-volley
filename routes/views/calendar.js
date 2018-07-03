@@ -1,5 +1,6 @@
-const keystone = require('keystone');
 const _ = require('lodash');
+const keystone = require('keystone');
+const moment = require('moment');
 
 module.exports = (req, res) => {
   const view = new keystone.View(req, res);
@@ -24,7 +25,10 @@ module.exports = (req, res) => {
                 return { time, matches: timeMatches };
               },
             );
-            return { date, slots };
+            return {
+              day: moment(date).locale('fr').format('dddd Do MMMM'),
+              slots,
+            };
           },
         );
         next();
