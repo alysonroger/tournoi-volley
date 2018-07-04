@@ -16,16 +16,23 @@
                 <div class="col-sm">
                   <h5 class="time">{{time}}</h5>
                   {{#each matches}}
-                    <div class="row bg-primary text-white match">
-                      <div class="col">
+                    <div class="row bg-primary match">
+                      <div class="col-8">
                         <div class="teams">
-                          <div><strong>{{team1.name}}</strong></div>
-                          <div>vs</div>
-                          <div><strong>{{team2.name}}</strong></div>
+                          <div>
+                            <strong class="text-white">{{team1.name}}</strong>
+                            {{#if setsWonTeam1}}
+                              <span> (<strong>{{setsWonTeam1}}</strong>)</span>
+                            {{/if}}
+                          </div>
+                          <div class="vs">vs</div>
+                          <div>
+                            <strong class="text-white">{{team2.name}}</strong>
+                          </div>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="court">
+                        <div class="info">
                           <p>Terrain {{court}}</p>
                           <p>{{referee.name}}</p>
                         </div>
