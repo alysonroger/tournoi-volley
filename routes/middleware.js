@@ -20,6 +20,7 @@ module.exports.initLocals = function (req, res, next) {
   res.locals.navLinks = [
     { label: 'Accueil', key: 'home', href: '/' },
     { label: 'Calendrier', key: 'calendar', href: '/calendar' },
+    { label: 'Classement', key: 'ranking', href: '/ranking' },
   ];
   res.locals.user = req.user;
   next();
