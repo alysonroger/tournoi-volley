@@ -1,0 +1,45 @@
+@import "variables";
+
+#ranking {
+  .container {
+    padding-top: calc(6rem + 72px);
+
+    h2 {
+      margin: 40px 0 30px 0;
+      padding-left: 15px;
+
+      &.poolA {
+        border-left: 10px solid $poolA;
+      }
+
+      &.poolB {
+        border-left: 10px solid $poolB;
+      }
+
+      &.poolC {
+        border-left: 10px solid $poolC;
+      }
+
+      &.poolD {
+        border-left: 10px solid $poolD;
+      }
+
+      &.poolE {
+        border-left: 10px solid $poolE;
+      }
+
+      &.poolF {
+        border-left: 10px solid $poolF;
+        border-color: darken($poolF, 10%);
+      }
+
+      &.poolG {
+        border-left: 10px solid $poolG;
+      }
+
+      &.poolH {
+        border-left: 10px solid $poolH;
+      }
+    }
+  }
+}

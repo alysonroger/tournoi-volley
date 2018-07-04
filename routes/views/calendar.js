@@ -5,11 +5,9 @@ const moment = require('moment');
 module.exports = (req, res) => {
   const view = new keystone.View(req, res);
 
-  // Set locals
   res.locals.section = 'calendar';
 
   view.on('init', next => {
-    // Load the galleries by sortOrder
     keystone
       .list('Match')
       .model
@@ -35,6 +33,5 @@ module.exports = (req, res) => {
       });
   });
 
-  // Render the view
   view.render('calendar');
 };

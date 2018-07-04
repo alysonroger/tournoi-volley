@@ -16,8 +16,9 @@ module.exports = app => {
   // Views
   app.get('/', routes.views.home);
   app.get('/calendar', routes.views.calendar);
-  app.get('/gallery', routes.views.gallery);
+  app.get('/ranking', routes.views.ranking);
 
+  // app.get('/gallery', routes.views.gallery);
   // app.get('/blog/:category?', routes.views.blog);
   // app.get('/blog/post/:post', routes.views.post);
 
