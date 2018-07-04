@@ -1,4 +1,5 @@
 @import "mixins";
+@import "variables";
 
 #calendar {
   .container {
@@ -27,35 +28,43 @@
       }
 
       &.poolA {
-        box-shadow: 0 0 10px red;
+        box-shadow: 0 0 10px $poolA;
+        border-color: darken($poolA, 10%);
       }
 
       &.poolB {
-        box-shadow: 0 0 10px orange;;
+        box-shadow: 0 0 10px $poolB;
+        border-color: darken($poolB, 10%);
       }
 
       &.poolC {
-        box-shadow: 0 0 10px green;
+        box-shadow: 0 0 10px $poolC;
+        border-color: darken($poolC, 10%);
       }
 
       &.poolD {
-        box-shadow: 0 0 10px dodgerblue;
+        box-shadow: 0 0 10px $poolD;
+        border-color: darken($poolD, 10%);
       }
 
       &.poolE {
-        box-shadow: 0 0 10px darkblue;
+        box-shadow: 0 0 10px $poolE;
+        border-color: darken($poolE, 10%);
       }
 
       &.poolF {
-        box-shadow: 0 0 10px darkviolet;
+        box-shadow: 0 0 10px $poolF;
+        border-color: darken($poolF, 10%);
       }
 
       &.poolG {
-        box-shadow: 0 0 10px saddlebrown;
+        box-shadow: 0 0 10px $poolG;
+        border-color: darken($poolG, 10%);
       }
 
       &.poolH {
-        box-shadow: 0 0 10px lightsteelblue;
+        box-shadow: 0 0 10px $poolH;
+        border-color: darken($poolH, 10%);
       }
 
       .teams {
