@@ -23,13 +23,46 @@
 
       .info {
         @include vertical-centered;
+        font-size: 0.8em;
+      }
+
+      &.poolA {
+        background: #ff2f00;
+      }
+
+      &.poolB {
+        background: #ffbc00;;
+      }
+
+      &.poolC {
+        background: green;
+      }
+
+      &.poolD {
+        background: dodgerblue;
+      }
+
+      &.poolE {
+        background: #0043ff;
+      }
+
+      &.poolF {
+        background: darkviolet;
+      }
+
+      &.poolG {
+        background: saddlebrown;
+      }
+
+      &.poolH {
+        background: lightsteelblue;
       }
 
       .teams {
         @include vertical-centered;
 
-        .score {
-          float: right;
+        div + div {
+          margin-top: 20px;
         }
       }
     }
