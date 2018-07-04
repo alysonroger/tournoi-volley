@@ -67,7 +67,7 @@ module.exports = (req, res) => {
           return {
             name,
             teams: teams
-              .sort((a, b) => a.points - b.points)
+              .sort((a, b) => b.points - a.points)
               .map((team, i) => {
                 team.rank = i + 1;
                 return team;
