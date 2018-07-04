@@ -28,43 +28,36 @@
       }
 
       &.poolA {
-        box-shadow: 0 0 10px $poolA;
-        border-color: darken($poolA, 10%);
+        border-left: 10px solid $poolA;
       }
 
       &.poolB {
-        box-shadow: 0 0 10px $poolB;
-        border-color: darken($poolB, 10%);
+        border-left: 10px solid $poolB;
       }
 
       &.poolC {
-        box-shadow: 0 0 10px $poolC;
-        border-color: darken($poolC, 10%);
+        border-left: 10px solid $poolC;
       }
 
       &.poolD {
-        box-shadow: 0 0 10px $poolD;
-        border-color: darken($poolD, 10%);
+        border-left: 10px solid $poolD;
       }
 
       &.poolE {
-        box-shadow: 0 0 10px $poolE;
-        border-color: darken($poolE, 10%);
+        border-left: 10px solid $poolE;
       }
 
       &.poolF {
-        box-shadow: 0 0 10px $poolF;
+        border-left: 10px solid $poolF;
         border-color: darken($poolF, 10%);
       }
 
       &.poolG {
-        box-shadow: 0 0 10px $poolG;
-        border-color: darken($poolG, 10%);
+        border-left: 10px solid $poolG;
       }
 
       &.poolH {
-        box-shadow: 0 0 10px $poolH;
-        border-color: darken($poolH, 10%);
+        border-left: 10px solid $poolH;
       }
 
       .teams {
