@@ -48,7 +48,12 @@ module.exports = (req, res) => {
 
                   if (match.winner.name === team.name) {
                     teamResults.matchesWon++;
-                    teamResults.points += 2;
+
+                    if (isTeam1 && match.setsWonTeam2 === 0 || isTeam2 && match.setsWonTeam1 === 0) {
+                      teamResults.points += 3;
+                    } else {
+                      teamResults.points += 2;
+                    }
                   } else {
                     teamResults.matchesLost++;
 
