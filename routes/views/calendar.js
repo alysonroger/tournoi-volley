@@ -12,6 +12,7 @@ module.exports = (req, res) => {
       .list('Match')
       .model
       .find()
+      .sort('date')
       .populate('referee team1 team2')
       .exec((error, matches) => {
         res.locals.dates = _.map(
