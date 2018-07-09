@@ -4,6 +4,10 @@
   .container {
     padding-top: calc(6rem + 72px);
 
+    @media (max-width: 991px) {
+      padding-top: calc(6rem + 30px);
+    }
+
     h2 {
       margin: 40px 0 30px 0;
       padding-left: 15px;
@@ -42,8 +46,16 @@
       }
     }
 
-    .team {
-      width: 40%;
+    .table-container {
+      overflow-x: auto;
+
+      @media (max-width: 575px) {
+        margin: 0 -15px;
+      }
+
+      .team {
+        width: 40%;
+      }
     }
   }
 }

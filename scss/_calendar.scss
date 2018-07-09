@@ -4,6 +4,10 @@
 #calendar {
   .container {
     padding-top: calc(6rem + 72px);
+
+    @media (max-width: 991px) {
+      padding-top: calc(6rem + 30px);
+    }
   }
 
   .day {
