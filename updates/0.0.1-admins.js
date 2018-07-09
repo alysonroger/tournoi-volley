@@ -9,6 +9,6 @@
 
 module.exports.create = {
 	User: [
-		{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'josselin.buils@gmail.com', 'password': 'toto', 'isAdmin': true },
+		{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'admin@keystone.js', 'password': 'toto', 'isAdmin': true },
 	],
 };

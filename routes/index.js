@@ -4,7 +4,6 @@ const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
-keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 const routes = {
@@ -19,9 +18,6 @@ module.exports = app => {
   app.get('/ranking', routes.views.ranking);
 
   // app.get('/gallery', routes.views.gallery);
-  // app.get('/blog/:category?', routes.views.blog);
-  // app.get('/blog/post/:post', routes.views.post);
-
   // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
   // app.get('/protected', middleware.requireUser, routes.views.protected);
 };
