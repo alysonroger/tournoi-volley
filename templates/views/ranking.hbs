@@ -7,13 +7,21 @@
         <div class="table-container">
           <table class="table">
             <thead>
-            <tr>
+            <tr class="d-none d-lg-table-row">
               <th scope="col">#</th>
               <th scope="col" class="team">Équipe</th>
-              <th scope="col">Gagnés</th>
-              <th scope="col">Perdus</th>
-              <th scope="col">Joués</th>
-              <th scope="col">Points</th>
+              <th scope="col" class="text-center">Matchs Joués</th>
+              <th scope="col" class="text-center">Victoires</th>
+              <th scope="col" class="text-center">Défaites</th>
+              <th scope="col" class="text-center">Points</th>
+            </tr>
+            <tr class="d-lg-none">
+              <th scope="col">#</th>
+              <th scope="col" class="team">Équipe</th>
+              <th scope="col" class="text-center">MJ</th>
+              <th scope="col" class="text-center">V</th>
+              <th scope="col" class="text-center">D</th>
+              <th scope="col" class="text-center">Pts</th>
             </tr>
             </thead>
             <tbody>
@@ -21,10 +29,10 @@
               <tr>
                 <th>{{rank}}</th>
                 <th>{{team}}</th>
-                <th>{{matchesWon}}</th>
-                <th>{{matchesLost}}</th>
-                <th>{{matchesPlayed}}</th>
-                <th>{{points}}</th>
+                <th class="text-center">{{matchesPlayed}}</th>
+                <th class="text-center">{{matchesWon}}</th>
+                <th class="text-center">{{matchesLost}}</th>
+                <th class="text-center">{{points}}</th>
               </tr>
             {{/each}}
             </tbody>
