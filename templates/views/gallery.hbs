@@ -1,32 +1,28 @@
-<div class="container">
-  <h1>Gallery</h1>
-</div>
-<div class="container">
-  <!-- if galleries -->
-  {{#if galleries}}
-    {{#each galleries}}
-      <h2>{{name}}
-        <div class="pull-right text-muted">19th May 2014</div>
-      </h2>
-      <div class="row gallery-images">
-        {{#if heroImage}}
-          <div class="col-sm-4 col-md-4 gallery-image">
-            <img src="{{cloudinaryUrl heroImage width='680' height='680'}}" class="img-rounded">
-          </div>
-        {{/if}}
-        <div class="col-sm-8 col-md-8">
+<div id="gallery">
+  <div class="container page">
+    <h1>Galerie</h1>
+    <div id="lightgallery">
+      {{#if galleries}}
+        {{#each galleries}}
+          <h2>{{name}}
+            <div class="pull-right text-muted">{{localDate}}</div>
+          </h2>
           <div class="row">
             {{#each images}}
-              <div class="col-xs-4 col-sm-4 col-md-3 gallery-image">
-                <img src="{{cloudinaryUrl width='300' height='300'}}" class="img-rounded">
+              <div class="col-sm-2 gallery-image" data-src="{{cloudinaryUrl}}">
+                <img src="{{cloudinaryUrl width='300'}}">
               </div>
             {{/each}}
           </div>
-        </div>
-      </div>
-    {{/each}}
-  {{else}}
-    <!-- else -->
-    <h3 class="text-muted">There are no image galleries yet.</h3>
-  {{/if}}
+        {{/each}}
+      {{else}}
+        <h3 class="text-muted">Il n'y a pas encore d'album.</h3>
+      {{/if}}
+    </div>
+    <script>
+      window.onload = function () {
+        lightGallery(document.getElementById('lightgallery'), { selector: '.gallery-image' });
+      };
+    </script>
+  </div>
 </div>

@@ -1,11 +1,5 @@
-const _ = require('lodash');
-const hbs = require('handlebars');
 const keystone = require('keystone');
 const cloudinary = require('cloudinary');
-
-// Collection of templates to interpolate
-const scriptTemplate = _.template('<script src="<%= src %>"></script>');
-const cssLinkTemplate = _.template('<link href="<%= href %>" rel="stylesheet">');
 
 module.exports = function () {
 
@@ -30,28 +24,6 @@ module.exports = function () {
    * KeystoneJS specific helpers
    * ===========================
    */
-
-  // block rendering for keystone admin css
-  _helpers.isAdminEditorCSS = function (user) {
-    let output = '';
-    if (typeof (user) !== 'undefined' && user.isAdmin) {
-      output = cssLinkTemplate({
-        href: '/keystone/styles/content/editor.min.css',
-      });
-    }
-    return new hbs.SafeString(output);
-  };
-
-  // block rendering for keystone admin js
-  _helpers.isAdminEditorJS = function (user) {
-    let output = '';
-    if (typeof (user) !== 'undefined' && user.isAdmin) {
-      output = scriptTemplate({
-        src: '/keystone/js/content/editor.js',
-      });
-    }
-    return new hbs.SafeString(output);
-  };
 
   // ### CloudinaryUrl Helper
   // Direct support of the cloudinary.url method from Handlebars (see

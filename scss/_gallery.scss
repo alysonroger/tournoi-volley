@@ -1,0 +1,19 @@
+#gallery {
+
+  .container {
+    padding-bottom: 3rem;
+
+    .row {
+      margin-top: -1rem;
+
+      .gallery-image {
+        margin-top: 1rem;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
