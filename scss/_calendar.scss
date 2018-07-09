@@ -2,19 +2,15 @@
 @import "variables";
 
 #calendar {
-  .container {
-    padding-top: calc(6rem + 72px);
-
-    @media (max-width: 991px) {
-      padding-top: calc(6rem + 30px);
-    }
-  }
-
   .day {
-    margin-top: 20px;
+    margin-top: 1.25rem;
 
     .date {
       @include vertical-centered;
+
+      @media(max-width: 991px) {
+        padding-bottom: 1.5rem;
+      }
     }
 
     .match {

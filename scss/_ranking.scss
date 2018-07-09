@@ -1,61 +1,53 @@
 @import "variables";
 
 #ranking {
-  .container {
-    padding-top: calc(6rem + 72px);
+  h2 {
+    margin: 2.5rem 0 2rem 0;
+    padding-left: 1rem;
 
-    @media (max-width: 991px) {
-      padding-top: calc(6rem + 30px);
+    &.poolA {
+      border-left: 10px solid $poolA;
     }
 
-    h2 {
-      margin: 40px 0 30px 0;
-      padding-left: 15px;
-
-      &.poolA {
-        border-left: 10px solid $poolA;
-      }
-
-      &.poolB {
-        border-left: 10px solid $poolB;
-      }
-
-      &.poolC {
-        border-left: 10px solid $poolC;
-      }
-
-      &.poolD {
-        border-left: 10px solid $poolD;
-      }
-
-      &.poolE {
-        border-left: 10px solid $poolE;
-      }
-
-      &.poolF {
-        border-left: 10px solid $poolF;
-        border-color: darken($poolF, 10%);
-      }
-
-      &.poolG {
-        border-left: 10px solid $poolG;
-      }
-
-      &.poolH {
-        border-left: 10px solid $poolH;
-      }
+    &.poolB {
+      border-left: 10px solid $poolB;
     }
 
-    .table-container {
-      overflow-x: auto;
+    &.poolC {
+      border-left: 10px solid $poolC;
+    }
 
-      @media (max-width: 575px) {
-        margin: 0 -15px;
-      }
+    &.poolD {
+      border-left: 10px solid $poolD;
+    }
 
-      .team {
-        width: 40%;
-      }
+    &.poolE {
+      border-left: 10px solid $poolE;
+    }
+
+    &.poolF {
+      border-left: 10px solid $poolF;
+      border-color: darken($poolF, 10%);
+    }
+
+    &.poolG {
+      border-left: 10px solid $poolG;
+    }
+
+    &.poolH {
+      border-left: 10px solid $poolH;
+    }
+  }
+
+  .table-container {
+    overflow-x: auto;
+
+    @media (max-width: 575px) {
+      margin: 0 -15px;
+    }
+
+    .team {
+      width: 40%;
     }
   }
 }
