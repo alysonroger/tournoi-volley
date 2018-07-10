@@ -49,7 +49,7 @@ function formatDates(matches) {
         (timeMatches, time) => {
           return { time, matches: timeMatches };
         },
-      );
+      ).sort((a, b) =>  parseInt(a.time, 10) - parseInt(b.time, 10));
       return {
         day: moment(date).locale('fr').format('dddd Do MMMM'),
         slots,
