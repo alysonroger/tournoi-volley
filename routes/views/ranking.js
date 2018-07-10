@@ -15,6 +15,8 @@ module.exports = (req, res) => {
       .find()
       .exec(async (error, teams) => {
 
+        teams = teams.filter(team => team.name.length > 2);
+
         for (const team of teams) {
           const pool = team.pool;
 
