@@ -16,7 +16,7 @@
                     <div class="col-lg">
                       <h5 class="time">{{time}}</h5>
                       {{#each matches}}
-                        <div class="row match bg-primary pool{{team1.pool}}">
+                        <div class="row match bg-primary {{#ifeq type 'Poule'}}pool{{team1.pool}}{{/ifeq}}">
                           <div class="col">
                             <div class="teams">
                               <div>
