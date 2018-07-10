@@ -14,18 +14,8 @@
     }
 
     .match {
-      border: 1px solid black;
-      border-radius: 5px;
-      text-align: center;
-      margin: 30px 0;
-      padding: 20px 0;
+      margin: 2rem 0;
       height: 140px;
-      color: black;
-
-      .info {
-        @include vertical-centered;
-        font-size: 0.8em;
-      }
 
       &.poolA {
         border-left: 10px solid $poolA;
@@ -59,18 +49,40 @@
       &.poolH {
         border-left: 10px solid $poolH;
       }
-
-      .teams {
-        @include vertical-centered;
-
-        div + div {
-          margin-top: 20px;
-        }
-      }
     }
 
     .time {
       text-align: center;
+    }
+  }
+
+  .match {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1.25rem 0;
+    color: black;
+
+    &.final-stage {
+      height: 100px;
+      margin: 1rem 0;
+
+      .teams div + div {
+        margin-top: .75rem;
+      }
+    }
+
+    .info {
+      @include vertical-centered;
+      font-size: 0.8em;
+    }
+
+    .teams {
+      @include vertical-centered;
+
+      div + div {
+        margin-top: 1.25rem;
+      }
     }
   }
 }

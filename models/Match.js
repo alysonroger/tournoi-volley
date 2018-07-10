@@ -15,7 +15,12 @@ Match.add({
   referee: { type: Types.Relationship, ref: 'Referee', initial: true },
   setsWonTeam1: { type: Types.Number },
   setsWonTeam2: { type: Types.Number },
-  type: { type: Types.Select, options: 'Poule, Huitième, Quart, Demi, Finale', required: true, initial: true },
+  type: {
+    type: Types.Select,
+    options: 'Poule, Huitième, Quart, Quart consolante, Demi, Demi consolante, Finale, Finale consolante',
+    required: true,
+    initial: true,
+  },
   winner: {
     type: Types.Relationship,
     ref: 'Team',
