@@ -2,7 +2,7 @@ const keystone = require('keystone');
 const Types = keystone.Field.Types;
 
 const Match = new keystone.List('Match', {
-  autokey: { from: 'date team1 team2', path: 'key', unique: true },
+  autokey: { from: 'date time court', path: 'key', unique: true },
 });
 
 // noinspection JSUnusedGlobalSymbols
