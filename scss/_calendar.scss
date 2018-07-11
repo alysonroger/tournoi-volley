@@ -14,8 +14,8 @@
     }
 
     .match {
-      margin: 2rem 0;
       height: 140px;
+      margin: 2rem 0;
 
       &.poolA {
         border-left: 10px solid $poolA;
@@ -49,6 +49,11 @@
       &.poolH {
         border-left: 10px solid $poolH;
       }
+
+      .info {
+        @include vertical-centered;
+        font-size: 0.8em;
+      }
     }
 
     .time {
@@ -63,25 +68,83 @@
     padding: 1.25rem 0;
     color: black;
 
-    &.final-stage {
-      height: 100px;
-      margin: 1rem 0;
-
-      .teams div + div {
-        margin-top: .75rem;
-      }
-    }
-
-    .info {
-      @include vertical-centered;
-      font-size: 0.8em;
-    }
-
     .teams {
       @include vertical-centered;
 
+      overflow: hidden;
+
       div + div {
         margin-top: 1.25rem;
+      }
+    }
+  }
+
+  .tree {
+    $margin: 1rem;
+    $margin-sm: 0;
+
+    .col-4 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .final .match {
+      margin-left: $margin;
+    }
+
+    .quarters .match {
+      margin-right: $margin;
+    }
+
+    .semi .match {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+
+    @media(max-width: 768px) {
+      .col-9, .col-3 {
+        padding: .3rem;
+      }
+
+      .final .match {
+        margin-left: $margin-sm;
+      }
+
+      .match {
+        height: 80px !important;
+        font-size: .7rem;
+      }
+
+      .quarters .match {
+        margin-right: $margin-sm;
+      }
+
+      .semi .match {
+        margin-left: $margin-sm;
+        margin-right: $margin-sm;
+      }
+    }
+
+    .match {
+      height: 120px;
+      margin: 1.25rem 0;
+      position: relative;
+
+      .info {
+        position: absolute;
+        top: -20px;
+        left: 0;
+        font-size: 0.7rem;
+        color: #3c3c3c;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
+
+      .teams div + div {
+        margin-top: .75rem;
       }
     }
   }

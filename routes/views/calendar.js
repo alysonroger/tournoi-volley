@@ -15,9 +15,6 @@ module.exports = (req, res) => {
       .sort('date')
       .populate('referee team1 team2')
       .exec((error, matches) => {
-        res.locals.quarterFinalDates = formatFinalStages(matches.filter(match => match.type === 'Quart'));
-        res.locals.semiFinalDates = formatFinalStages(matches.filter(match => match.type === 'Demi'));
-        res.locals.finalDate = (formatFinalStages(matches.filter(match => match.type === 'Finale')) || [])[0];
         res.locals.dateBlocks = [
           {
             name: 'Huitèmes de finale',
@@ -28,6 +25,25 @@ module.exports = (req, res) => {
             dates: formatDates(matches.filter(match => match.type === 'Poule')),
           },
         ];
+        res.locals.finalStages = {
+          quarter: formatFinalStages(matches.filter(match => match.type === 'Quart')),
+          semi: formatFinalStages(matches.filter(match => match.type === 'Demi')),
+          final: (formatFinalStages(matches.filter(match => match.type === 'Finale')) || [])[0],
+        };
+        res.locals.consolatoryStages = [
+          {
+            type: 'quarter',
+            stages: formatFinalStages(matches.filter(match => match.type === 'Quart consolante')),
+          },
+          {
+            type: 'semi',
+            stages: formatFinalStages(matches.filter(match => match.type === 'Demi consolante')),
+          },
+          {
+            type: 'final',
+            stages: formatFinalStages(matches.filter(match => match.type === 'Finale consolante')),
+          },
+        ];
         next();
       });
   });
@@ -36,7 +52,10 @@ module.exports = (req, res) => {
 };
 
 function formatFinalStages(matches) {
-  matches.forEach(match => match.date = moment(match.date).locale('fr').format('dddd Do MMMM'));
+  matches.forEach(match => {
+    const date = moment(match.date).locale('fr').format('dddd Do MMMM');
+    match.hrDate = `${date.slice(0, 1).toUpperCase()}${date.slice(1)}`
+  });
   return matches;
 }
 
@@ -49,7 +68,7 @@ function formatDates(matches) {
         (timeMatches, time) => {
           return { time, matches: timeMatches };
         },
-      ).sort((a, b) =>  parseInt(a.time, 10) - parseInt(b.time, 10));
+      ).sort((a, b) => parseInt(a.time, 10) - parseInt(b.time, 10));
       return {
         day: moment(date).locale('fr').format('dddd Do MMMM'),
         slots,

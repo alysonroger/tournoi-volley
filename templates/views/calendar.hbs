@@ -1,6 +1,52 @@
 <div id="calendar">
   <div class="container page">
     <h1>Calendrier</h1>
+
+    {{#if consolatoryStages.0.stages}}
+      <h2>Consolante</h2>
+      <div class="row tree">
+        {{#each consolatoryStages}}
+          <div class="col-4 {{type}}">
+            {{#each stages}}
+              <div id="c-{{../type}}-{{@index}}" class="row match bg-primary">
+                <div class="info">{{hrDate}}, Terrain {{court}}{{#if referee}}, {{referee.name}}{{/if}}</div>
+                <div class="col-9">
+                  <div class="teams">
+                    <div>
+                      <strong class="text-white">{{#if team1}}{{team1.name}}{{else}}-{{/if}}</strong>
+                    </div>
+                    <div>
+                      <strong class="text-white">{{#if team2}}{{team2.name}}{{else}}-{{/if}}</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="teams">
+                    <div><strong class="score">{{#if winner}}{{setsWonTeam1}}{{else}}-{{/if}}</strong></div>
+                    <div><strong class="score">{{#if winner}}{{setsWonTeam2}}{{else}}-{{/if}}</strong></div>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        {{/each}}
+      </div>
+      <script type="text/javascript">
+        window.onload = function () {
+          const options = { radius: 3, color: 'black', anchorA: 'horizonal', anchorB: 'horizonal' };
+
+          jqSimpleConnect.connect('#c-quarter-0', '#c-semi-0', options);
+          jqSimpleConnect.connect('#c-quarter-1', '#c-semi-0', options);
+          jqSimpleConnect.connect('#c-quarter-2', '#c-semi-1', options);
+          jqSimpleConnect.connect('#c-quarter-3', '#c-semi-1', options);
+          jqSimpleConnect.connect('#c-semi-0', '#c-final-0', options);
+          jqSimpleConnect.connect('#c-semi-1', '#c-final-0', options);
+
+          $(window).resize(jqSimpleConnect.repaintAll);
+        };
+      </script>
+    {{/if}}
+
     {{#if dateBlocks}}
       {{#each dateBlocks}}
         {{#if dates}}
@@ -54,5 +100,6 @@
     {{else}}
       <h3 class="text-muted">Il n'y a pas encore de match.</h3>
     {{/if}}
+
   </div>
 </div>
