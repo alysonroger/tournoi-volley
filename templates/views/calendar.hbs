@@ -9,7 +9,7 @@
           <div class="col-4 {{type}}">
             {{#each stages}}
               <div id="c-{{../type}}-{{@index}}" class="row match bg-primary">
-                <div class="info">{{hrDate}}, Terrain {{court}}{{#if referee}}, {{referee.name}}{{/if}}</div>
+                <div class="info">{{hrDate}} {{time}}, Terrain {{court}}{{#if referee}}, {{referee.name}}{{/if}}</div>
                 <div class="col-9">
                   <div class="teams">
                     <div>
@@ -74,7 +74,7 @@
                             </div>
                           </div>
                           {{#if winner}}
-                            <div class="col-1">
+                            <div class="col-2">
                               <div class="teams">
                                 <div><strong class="score">{{setsWonTeam1}}</strong></div>
                                 <div><strong class="score">{{setsWonTeam2}}</strong></div>
