@@ -25,23 +25,22 @@ module.exports = (req, res) => {
             dates: formatDates(matches.filter(match => match.type === 'Poule')),
           },
         ];
-        res.locals.finalStages = {
-          quarter: formatFinalStages(matches.filter(match => match.type === 'Quart')),
-          semi: formatFinalStages(matches.filter(match => match.type === 'Demi')),
-          final: (formatFinalStages(matches.filter(match => match.type === 'Finale')) || [])[0],
-        };
-        res.locals.consolatoryStages = [
+        res.locals.treeBlocks = [
           {
-            type: 'quarter',
-            stages: formatFinalStages(matches.filter(match => match.type === 'Quart consolante')),
+            name: 'Phases finales',
+            stages: [
+              { type: 'quarter', matches: formatFinalStages(matches, 'Quart') },
+              { type: 'semi', matches: formatFinalStages(matches, 'Demi') },
+              { type: 'final', matches: formatFinalStages(matches, 'Finale') },
+            ],
           },
           {
-            type: 'semi',
-            stages: formatFinalStages(matches.filter(match => match.type === 'Demi consolante')),
-          },
-          {
-            type: 'final',
-            stages: formatFinalStages(matches.filter(match => match.type === 'Finale consolante')),
+            name: 'Consolante',
+            stages: [
+              { type: 'quarter', matches: formatFinalStages(matches, 'Quart consolante') },
+              { type: 'semi', matches: formatFinalStages(matches, 'Demi consolante') },
+              { type: 'final', matches: formatFinalStages(matches, 'Finale consolante') },
+            ],
           },
         ];
         next();
@@ -51,7 +50,8 @@ module.exports = (req, res) => {
   view.render('calendar');
 };
 
-function formatFinalStages(matches) {
+function formatFinalStages(matches, type) {
+  matches = matches.filter(match => match.type === type);
   matches.forEach(match => {
     const date = moment(match.date).locale('fr').format('dddd Do MMMM');
     match.hrDate = `${date.slice(0, 1).toUpperCase()}${date.slice(1)}`
