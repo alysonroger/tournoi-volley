@@ -31,7 +31,7 @@ module.exports = (req, res) => {
             stages: [
               { type: 'quarter', matches: formatFinalStages(matches, 'Quart') },
               { type: 'semi', matches: formatFinalStages(matches, 'Demi') },
-              { type: 'final', matches: formatFinalStages(matches, 'Finale') },
+              { type: 'final', matches: [...formatFinalStages(matches, 'Finale'), ...formatFinalStages(matches, 'Petite finale')] },
             ],
           },
           {
@@ -39,7 +39,7 @@ module.exports = (req, res) => {
             stages: [
               { type: 'quarter', matches: formatFinalStages(matches, 'Quart consolante') },
               { type: 'semi', matches: formatFinalStages(matches, 'Demi consolante') },
-              { type: 'final', matches: formatFinalStages(matches, 'Finale consolante') },
+              { type: 'final', matches: [...formatFinalStages(matches, 'Finale consolante'), ...formatFinalStages(matches, 'Petite finale consolante')] },
             ],
           },
         ];
