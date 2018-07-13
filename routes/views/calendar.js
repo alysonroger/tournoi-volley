@@ -66,7 +66,7 @@ function formatDates(matches) {
       const slots = _.map(
         _.groupBy(dayMatches, match => match.time),
         (timeMatches, time) => {
-          return { time, matches: timeMatches };
+          return { time, matches: timeMatches.sort((a, b) => ('' + a.court).localeCompare(b.court)) };
         },
       ).sort((a, b) => parseInt(a.time, 10) - parseInt(b.time, 10));
       return {
