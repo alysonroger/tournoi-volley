@@ -6,7 +6,7 @@
       {{#each treeBlocks}}
         {{#if stages.0.matches}}
           <h2>{{name}}</h2>
-          <div class="row tree">
+          <div id="tree-{{id}}" class="row tree">
             {{#each stages}}
               <div class="col-4 {{type}}">
                 {{#each matches}}
@@ -37,12 +37,12 @@
             window.onload = function () {
               const options = { radius: 3, color: 'black', anchorA: 'horizonal', anchorB: 'horizonal' };
 
-              jqSimpleConnect.connect('#c-quarter-0', '#c-semi-0', options);
-              jqSimpleConnect.connect('#c-quarter-1', '#c-semi-0', options);
-              jqSimpleConnect.connect('#c-quarter-2', '#c-semi-1', options);
-              jqSimpleConnect.connect('#c-quarter-3', '#c-semi-1', options);
-              jqSimpleConnect.connect('#c-semi-0', '#c-final-0', options);
-              jqSimpleConnect.connect('#c-semi-1', '#c-final-0', options);
+              jqSimpleConnect.connect('#tree-{{id}} #c-quarter-0', '#tree-{{id}} #c-semi-0', options);
+              jqSimpleConnect.connect('#tree-{{id}} #c-quarter-1', '#tree-{{id}} #c-semi-0', options);
+              jqSimpleConnect.connect('#tree-{{id}} #c-quarter-2', '#tree-{{id}} #c-semi-1', options);
+              jqSimpleConnect.connect('#tree-{{id}} #c-quarter-3', '#tree-{{id}} #c-semi-1', options);
+              jqSimpleConnect.connect('#tree-{{id}} #c-semi-0', '#tree-{{id}} #c-final-0', options);
+              jqSimpleConnect.connect('#tree-{{id}} #c-semi-1', '#tree-{{id}} #c-final-0', options);
 
               $(window).resize(jqSimpleConnect.repaintAll);
             };
