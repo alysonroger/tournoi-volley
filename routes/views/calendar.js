@@ -27,6 +27,7 @@ module.exports = (req, res) => {
         ];
         res.locals.treeBlocks = [
           {
+            id: 'phases-finales',
             name: 'Phases finales',
             stages: [
               { type: 'quarter', matches: formatFinalStages(matches, 'Quart') },
@@ -35,6 +36,7 @@ module.exports = (req, res) => {
             ],
           },
           {
+            id: 'consolante',
             name: 'Consolante',
             stages: [
               { type: 'quarter', matches: formatFinalStages(matches, 'Quart consolante') },
