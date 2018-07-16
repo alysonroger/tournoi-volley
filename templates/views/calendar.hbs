@@ -33,22 +33,24 @@
               </div>
             {{/each}}
           </div>
-          <script type="text/javascript">
-            window.onload = function () {
-              const options = { radius: 3, color: 'black', anchorA: 'horizonal', anchorB: 'horizonal' };
-
-              jqSimpleConnect.connect('#tree-{{id}} #c-quarter-0', '#tree-{{id}} #c-semi-0', options);
-              jqSimpleConnect.connect('#tree-{{id}} #c-quarter-1', '#tree-{{id}} #c-semi-0', options);
-              jqSimpleConnect.connect('#tree-{{id}} #c-quarter-2', '#tree-{{id}} #c-semi-1', options);
-              jqSimpleConnect.connect('#tree-{{id}} #c-quarter-3', '#tree-{{id}} #c-semi-1', options);
-              jqSimpleConnect.connect('#tree-{{id}} #c-semi-0', '#tree-{{id}} #c-final-0', options);
-              jqSimpleConnect.connect('#tree-{{id}} #c-semi-1', '#tree-{{id}} #c-final-0', options);
-
-              $(window).resize(jqSimpleConnect.repaintAll);
-            };
-          </script>
         {{/if}}
       {{/each}}
+      <script type="text/javascript">
+        window.onload = function () {
+          const options = { radius: 3, color: 'black', anchorA: 'horizonal', anchorB: 'horizonal' };
+
+          document.querySelectorAll('[id^="tree-"]').forEach(function (element) {
+            jqSimpleConnect.connect('#' + element.id + ' #c-quarter-0', '#' + element.id + ' #c-semi-0', options);
+            jqSimpleConnect.connect('#' + element.id + ' #c-quarter-1', '#' + element.id + ' #c-semi-0', options);
+            jqSimpleConnect.connect('' + element.id + ' #c-quarter-2', '#' + element.id + ' #c-semi-1', options);
+            jqSimpleConnect.connect('#' + element.id + ' #c-quarter-3', '#' + element.id + ' #c-semi-1', options);
+            jqSimpleConnect.connect('#' + element.id + ' #c-semi-0', '#' + element.id + ' #c-final-0', options);
+            jqSimpleConnect.connect('#' + element.id + ' #c-semi-1', '#' + element.id + ' #c-final-0', options);
+          });
+
+          $(window).resize(jqSimpleConnect.repaintAll);
+        };
+      </script>
     {{/if}}
 
     {{#if dateBlocks}}
