@@ -42,7 +42,7 @@
           document.querySelectorAll('[id^="tree-"]').forEach(function (element) {
             jqSimpleConnect.connect('#' + element.id + ' #c-quarter-0', '#' + element.id + ' #c-semi-0', options);
             jqSimpleConnect.connect('#' + element.id + ' #c-quarter-1', '#' + element.id + ' #c-semi-0', options);
-            jqSimpleConnect.connect('' + element.id + ' #c-quarter-2', '#' + element.id + ' #c-semi-1', options);
+            jqSimpleConnect.connect('#' + element.id + ' #c-quarter-2', '#' + element.id + ' #c-semi-1', options);
             jqSimpleConnect.connect('#' + element.id + ' #c-quarter-3', '#' + element.id + ' #c-semi-1', options);
             jqSimpleConnect.connect('#' + element.id + ' #c-semi-0', '#' + element.id + ' #c-final-0', options);
             jqSimpleConnect.connect('#' + element.id + ' #c-semi-1', '#' + element.id + ' #c-final-0', options);
