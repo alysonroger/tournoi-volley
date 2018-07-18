@@ -99,6 +99,38 @@
       }
     }
 
+    .match {
+      height: 120px;
+      margin: 1.25rem 0;
+      position: relative;
+
+      .info, .info-secondary {
+        position: absolute;
+        font-size: 0.7rem;
+        color: #3c3c3c;
+        width: 100%;
+        left: 0;
+      }
+
+      .info {
+        top: -20px;
+      }
+
+      .info-secondary {
+        bottom: -20px;
+      }
+
+      .teams div + div {
+        margin-top: .75rem;
+      }
+
+      @media(min-width: 992px) {
+        .info-secondary {
+          display: none;
+        }
+      }
+    }
+
     .quarter .match {
       margin-right: $margin;
     }
@@ -132,25 +164,9 @@
       }
     }
 
-    .match {
-      height: 120px;
-      margin: 1.25rem 0;
-      position: relative;
-
-      .info {
-        position: absolute;
-        top: -20px;
-        left: 0;
-        font-size: 0.7rem;
-        color: #3c3c3c;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 100%;
-      }
-
-      .teams div + div {
-        margin-top: .75rem;
+    @media(max-width: 991px) {
+      .match {
+        margin: 1.75rem 0;;
       }
     }
   }
