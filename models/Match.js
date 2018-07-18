@@ -3,6 +3,7 @@ const Types = keystone.Field.Types;
 
 const Match = new keystone.List('Match', {
   autokey: { from: 'date time court', path: 'key', unique: true },
+  defaultSort: '-date',
 });
 
 // noinspection JSUnusedGlobalSymbols
@@ -35,5 +36,5 @@ Match.add({
   },
 });
 
-Match.defaultColumns = 'date, time, team1, team2, referee, type';
+Match.defaultColumns = 'date, time, court, team1, team2, referee, type';
 Match.register();
