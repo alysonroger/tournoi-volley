@@ -36,6 +36,7 @@ module.exports = (req, res) => {
             .list('Match')
             .model
             .find()
+            .where('type', 'Poule')
             .populate('team1 team2 winner')
             .exec((error, matches) => {
 
