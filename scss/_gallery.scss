@@ -1,3 +1,5 @@
+@import "variables";
+
 #gallery {
 
   .container {
@@ -6,12 +8,31 @@
     .row {
       margin-top: -1rem;
 
-      .gallery-image {
+      .gallery-image, .gallery-video {
         margin-top: 1rem;
         cursor: pointer;
 
         img {
           width: 100%;
+        }
+      }
+
+      .gallery-video {
+        &:before {
+          font-family: FontAwesome;
+          content: "\f144";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          font-size: 50px;
+          transform: translate(-50%, -50%);
+          color: $white;
+          opacity: .8;
+        }
+
+        &:hover:before {
+          color: $primary;
+          opacity: 1;
         }
       }
     }

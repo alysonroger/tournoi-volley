@@ -8,14 +8,14 @@
             <div class="pull-right text-muted">{{localDate}}</div>
           </h2>
           <div class="row">
+            {{#each videos}}
+              <div class="col-sm-2 gallery-video" data-src="{{url}}">
+                <img src="{{thumbnailUrl}}">
+              </div>
+            {{/each}}
             {{#each images}}
               <div class="col-sm-2 gallery-image" data-src="{{cloudinaryUrl}}">
                 <img src="{{cloudinaryUrl width='300'}}">
-              </div>
-            {{/each}}
-            {{#each videos}}
-              <div class="col-sm-2 gallery-image" data-src="{{url}}">
-                <img src="{{thumbnailUrl}}">
               </div>
             {{/each}}
           </div>
@@ -26,7 +26,7 @@
     </div>
     <script>
       window.onload = function () {
-        lightGallery(document.getElementById('lightgallery'), { selector: '.gallery-image' });
+        lightGallery(document.getElementById('lightgallery'), { selector: '.gallery-image, .gallery-video' });
       };
     </script>
   </div>
