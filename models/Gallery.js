@@ -1,10 +1,6 @@
 const keystone = require('keystone');
 const Types = keystone.Field.Types;
 
-/**
- * Gallery Model
- * =============
- */
 const Gallery = new keystone.List('Gallery', {
 	autokey: { from: 'name', path: 'key', unique: true },
 });
@@ -12,7 +8,7 @@ const Gallery = new keystone.List('Gallery', {
 Gallery.add({
 	name: { type: String, required: true },
 	publishedDate: { type: Date, default: Date.now },
-	images: { type: Types.CloudinaryImages },
+	images: { type: Types.CloudinaryImages, autoCleanup : true },
 });
 
 Gallery.register();

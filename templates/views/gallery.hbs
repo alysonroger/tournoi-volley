@@ -13,6 +13,11 @@
                 <img src="{{cloudinaryUrl width='300'}}">
               </div>
             {{/each}}
+            {{#each videos}}
+              <div class="col-sm-2 gallery-image" data-src="{{url}}">
+                <img src="{{thumbnailUrl}}">
+              </div>
+            {{/each}}
           </div>
         {{/each}}
       {{else}}
