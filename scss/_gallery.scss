@@ -28,11 +28,13 @@
           transform: translate(-50%, -50%);
           color: $white;
           opacity: .8;
+          transition: color .1s, font-size .1s;
         }
 
         &:hover:before {
           color: $primary;
           opacity: 1;
+          font-size: 60px;
         }
       }
     }
