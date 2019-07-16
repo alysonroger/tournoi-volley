@@ -30,7 +30,6 @@ module.exports = (req, res) => {
             id: 'phases-finales',
             name: 'Phases finales',
             stages: [
-              { type: 'quarter', matches: formatFinalStages(matches, 'Barrage') },
               { type: 'quarter', matches: formatFinalStages(matches, 'Quart') },
               { type: 'semi', matches: formatFinalStages(matches, 'Demi') },
               { type: 'final', matches: [...formatFinalStages(matches, 'Finale'), ...formatFinalStages(matches, 'Petite finale')] },
@@ -43,6 +42,13 @@ module.exports = (req, res) => {
               { type: 'quarter', matches: formatFinalStages(matches, 'Quart consolante') },
               { type: 'semi', matches: formatFinalStages(matches, 'Demi consolante') },
               { type: 'final', matches: [...formatFinalStages(matches, 'Finale consolante'), ...formatFinalStages(matches, 'Petite finale consolante')] },
+            ],
+          },
+          {
+            id: 'barrage',
+            name: 'Barrage',
+            stages: [
+              { type: 'quarter', matches: formatFinalStages(matches, 'Barrage') },
             ],
           },
         ];
