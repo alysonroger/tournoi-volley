@@ -18,7 +18,7 @@ Match.add({
   setsWonTeam2: { type: Types.Number },
   type: {
     type: Types.Select,
-    options: 'Poule, Huitième, Quart, Quart consolante, Demi, Demi consolante, Petite finale, Petite finale consolante, Finale, Finale consolante',
+    options: 'Poule, Huitième, Quart, Quart consolante, Barrage,  Demi, Demi consolante, Petite finale, Petite finale consolante, Finale, Finale consolante',
     required: true,
     initial: true,
   },
