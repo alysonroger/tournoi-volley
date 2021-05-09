@@ -16,7 +16,7 @@
     "express-handlebars": "3.0.0",
     "handlebars": "4.0.11",
     "keystone": "4.0.0-rc.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "moment": "2.22.2",
     "node-sass": "4.9.0",
     "node-sass-middleware": "0.11.0"
