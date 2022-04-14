@@ -10,7 +10,7 @@
     "watch-css": "node-sass -w scss/main.scss public/css/main.css"
   },
   "dependencies": {
-    "async": "2.6.1",
+    "async": "3.2.2",
     "cloudinary": "1.11.0",
     "dotenv": "6.0.0",
     "express-handlebars": "3.0.0",
